@@ -2,6 +2,8 @@
 
 Clarinet is the CLI workflow for developing and publishing smart contracts to Stacks, the Bitcoin smart contract L2. Clarinet has a powerful feature: deployment plans—reproducible deployment steps that publish a collection of on-chain transactions and one or more contracts to a network. 
 
+![deployment-plans](deployment-plans.png)
+
 This repository hosts the code for the two Clarinet projects used to demonstrate deployment plans, their use in development, testing, automation, and deployment. 
 
 ## Links & Resources
