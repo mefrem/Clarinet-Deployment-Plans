@@ -2,8 +2,6 @@
 
 Clarinet is the CLI workflow for developing and publishing smart contracts to Stacks, the Bitcoin smart contract L2. Clarinet has a powerful feature: deployment plans—reproducible deployment steps that publish a collection of on-chain transactions and one or more contracts to a network. 
 
-![deployment-plans](deployment-plans.png)
-
 This repository hosts the code for the two Clarinet projects used to demonstrate deployment plans, their use in development, testing, automation, and deployment. 
 
 ## Links & Resources
@@ -95,3 +93,5 @@ Step 0: `brew install clarinet` or `winget install clarinet`
 - [SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T.ft-factory](https://explorer.stacks.co/txid/0x5c9cec6d28627bd73db277297d1a239f758fca087c9e3259b721686abd4801b3?chain=mainnet)
 - [SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T.nft-factory](https://explorer.stacks.co/txid/0x2a84525f24fb6c2e8764f487b12d20c5c45a7eb44650ccbbc6c1b25cd674c59a?chain=mainnet)
 - Manually specified `claim` contract call in deployment plan: txid [0x09d67be58578c68dac709b3bd618ab11c12d882c15b9669b422fec1656ff2d81](https://explorer.stacks.co/txid/0x09d67be58578c68dac709b3bd618ab11c12d882c15b9669b422fec1656ff2d81?chain=mainnet)
+
+![deployment-plans](deployment-plans.png)
