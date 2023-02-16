@@ -1,0 +1,22 @@
+# Demonstrating Deployment Plans
+
+                ┌────────┐
+                │  STX   │
+                │  user  │
+         ┌──────┴────────┘
+         │
+         │
+        [1]
+         │
+         │
+┌────────▼──────┐     ┌───────────────┐
+│               │     │               │
+│  nft-factory  │     │   ft-factory  │
+│               │     │               │
+│               ├─[2]─►               │
+│               │     │               │
+│               │     │               │
+└───────────────┘     └───────────────┘
+
+[1] User must claim an NFT
+[2] With NFT, user can mint FT

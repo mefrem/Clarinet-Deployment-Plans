@@ -1,0 +1,49 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://stacks-node-api.testnet.stacks.co"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - requirement-publish:
+            contract-id: SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait
+            remap-sender: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            remap-principals:
+              SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            cost: 4680
+            path: "./.cache/requirements/SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.clar"
+            clarity-version: 1
+        - requirement-publish:
+            contract-id: SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard
+            remap-sender: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            remap-principals:
+              SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            cost: 8400
+            path: "./.cache/requirements/SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.clar"
+            clarity-version: 1
+        - contract-publish:
+            contract-name: nft-factory
+            expected-sender: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            cost: 15344
+            path: contracts/nft-factory.clar
+            anchor-block-only: true
+            clarity-version: 1
+        - contract-publish:
+            contract-name: ft-factory
+            expected-sender: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            cost: 17079
+            path: contracts/ft-factory.clar
+            anchor-block-only: true
+            clarity-version: 1
+    - id: 1
+      transactions:
+        - contract-call:
+            contract-id: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q.nft-factory
+            expected-sender: ST2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASBTXT8Q
+            method: claim
+            parameters: [] 
+            cost: 5960
+      epoch: "2.0"

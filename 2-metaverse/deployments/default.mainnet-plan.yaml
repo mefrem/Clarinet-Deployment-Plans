@@ -1,0 +1,33 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://stacks-node-api.mainnet.stacks.co"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: nft-factory
+            expected-sender: SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T
+            cost: 39604
+            path: contracts/nft-factory.clar
+            anchor-block-only: true
+            clarity-version: 1
+        - contract-publish:
+            contract-name: ft-factory
+            expected-sender: SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T
+            cost: 43973
+            path: contracts/ft-factory.clar
+            anchor-block-only: true
+            clarity-version: 1
+    - id: 1
+      transactions:
+        - contract-call:
+            contract-id: SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T.nft-factory
+            expected-sender: SP2Y2FP02VFZN0XGYTT1ZT3Y8EWTSEWCVASGES70T
+            method: claim
+            parameters: [] 
+            cost: 5960
+      epoch: "2.0"
